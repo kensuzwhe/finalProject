@@ -59,16 +59,16 @@ let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","addre
 {"id":13,"name":"Blue Bridal B.","category":"Shopping","address":"4036 S Lamar Blvd suite 100, Austin, TX 78704","type":"Boutique","free":"null"},
 {"id":14,"name":"Golden Bones B.","category":"Shopping","address":"3210 Esperanza Crossing #110, Austin, TX 78758","type":"Boutique","free":"null"},
 {"id":15,"name":"The Boutique on Stonelake","category":"Shopping","address":"9910 Stonelake Boulevard, Located inside Lexus of Austin, Austin, TX 78759","type":"Boutique","free":"null"},
-{"id":16,"name":"Hamilton Pool","category":"Active","address":"Null","type":"null","free":"no"},
-{"id":17,"name":"Mayfield Park & Nature Preserve","category":"Active","address":"3505 W 35th St, Austin, TX 78703","type":"null","free":"yes"},
-{"id":18,"name":"Zilker Metropolitan Park","category":"Active","address":"2101 Barton Springs Rd, Austin, TX 78704","type":"null","free":"yes"},
-{"id":19,"name":"Lady Bird Lake","category":"Active","address":"Austin, TX","type":"null","free":"yes"},
-{"id":20,"name":"Barton Springs Municipal Pool","category":"Active","address":"2131 William Barton Dr, Austin, TX 78746","type":"null","free":"no"},
+{"id":16,"name":"Hamilton Pool","category":"Active","address":"Null","type":"null","free":"small cost"},
+{"id":17,"name":"Mayfield Park & Nature Preserve","category":"Active","address":"3505 W 35th St, Austin, TX 78703","type":"null","free":"free"},
+{"id":18,"name":"Zilker Metropolitan Park","category":"Active","address":"2101 Barton Springs Rd, Austin, TX 78704","type":"null","free":"free"},
+{"id":19,"name":"Lady Bird Lake","category":"Active","address":"Austin, TX","type":"null","free":"free"},
+{"id":20,"name":"Barton Springs Municipal Pool","category":"Active","address":"2131 William Barton Dr, Austin, TX 78746","type":"null","free":"small cost"},
 {"id":21,"name":"Mckinney Falls State Park","category":"Active","address":"5808 McKinney Falls Pkwy, Austin, TX 78744","type":"null","free":"free"},
-{"id":22,"name":"Barton Creek Greenblet","category":"Active","address":"Null","type":"null","free":"yes"},
-{"id":23,"name":"Mount Bonell","category":"Active","address":"Austin, TX 78731","type":"null","free":"yes"},
-{"id":24,"name":"Zilker Botanical Garden","category":"Active","address":"2220 Barton Springs Rd, Austin, TX 78746","type":"null","free":"no"},
-{"id":25,"name":"Lake Travis","category":"Active","address":"Texas","type":"null","free":"yes"},
+{"id":22,"name":"Barton Creek Greenblet","category":"Active","address":"Null","type":"null","free":"free"},
+{"id":23,"name":"Mount Bonell","category":"Active","address":"Austin, TX 78731","type":"null","free":"free"},
+{"id":24,"name":"Zilker Botanical Garden","category":"Active","address":"2220 Barton Springs Rd, Austin, TX 78746","type":"null","free":"small cost"},
+{"id":25,"name":"Lake Travis","category":"Active","address":"Texas","type":"null","free":"free"},
 {"id":26,"name":"Bullock Texas State History Museum","category":"Entertainment ","address":"1800 Congress Ave, Austin, TX 78701","type":"null","free":"null"},
 {"id":27,"name":"LBJ Presidental Library","category":"Entertainment ","address":"2313 Red River St, Austin, TX 78712","type":"null","free":"null"},
 {"id":28,"name":"Blanton Museum of Art","category":"Entertainment ","address":"200 E Martin Luther King Jr Blvd, Austin, TX 78712","type":"null","free":"null"},
@@ -78,14 +78,14 @@ let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","addre
 {"id":32,"name":"Pottery Studio & Gallery","category":"Entertainment ","address":"5442 Burnet Rd, Austin, TX 78756","type":"null","free":"null"},
 {"id":33,"name":"Pinballz","category":"Entertainment ","address":"8940 Research Blvd, Austin, TX 78758","type":"null","free":"null"},
 {"id":34,"name":"Metropolitan Theater","category":"Entertainment ","address":"901 Little Texas Ln, Austin, TX 78745","type":"null","free":"null"},
-{"id":35,"name":"Graffiti Park at Castle Hill","category":"Views","address":"1008 Baylor St, Austin, TX 78703","type":"null","free":"yes"},
-{"id":36,"name":"Austin Zoo","category":"Views","address":"10808 Rawhide Trail, Austin, TX 78736","type":"null","free":"no"},
-{"id":37,"name":"Pennybacker Bridge","category":"Views","address":"Austin, TX 78746","type":"null","free":"yes"},
-{"id":38,"name":"Austin Aquarium","category":"Views","address":"13530 US-183 #101, Austin, TX 78750","type":"null","free":"no"},
+{"id":35,"name":"Graffiti Park at Castle Hill","category":"Views","address":"1008 Baylor St, Austin, TX 78703","type":"null","free":"free"},
+{"id":36,"name":"Austin Zoo","category":"Views","address":"10808 Rawhide Trail, Austin, TX 78736","type":"null","free":"small cost"},
+{"id":37,"name":"Pennybacker Bridge","category":"Views","address":"Austin, TX 78746","type":"null","free":"free"},
+{"id":38,"name":"Austin Aquarium","category":"Views","address":"13530 US-183 #101, Austin, TX 78750","type":"null","free":"small cost"},
 {"id":39,"name":"Soco Bridge","category":"Views","address":"Congress Ave, Austin, TX 78704","type":"null","free":"free"},
-{"id":40,"name":"The Oasis","category":"Views","address":"6550 Comanche Trail, Austin, TX 78732","type":"null","free":"no"},
-{"id":41,"name":"Texas State Capitol","category":"Views","address":"1100 Congress Ave, Austin, TX 78701","type":"null","free":"yes"},
-{"id":42,"name":"Lake Austin","category":"Views","address":"Texas","type":"null","free":"yes"}]
+{"id":40,"name":"The Oasis","category":"Views","address":"6550 Comanche Trail, Austin, TX 78732","type":"null","free":"small cost"},
+{"id":41,"name":"Texas State Capitol","category":"Views","address":"1100 Congress Ave, Austin, TX 78701","type":"null","free":"free"},
+{"id":42,"name":"Lake Austin","category":"Views","address":"Texas","type":"null","free":"free"}]
 //create helper method to add dom elements
 //--loop through new makeBfast [etc] array
 //--create p (or whatever) elements w (EX obj['name'])
@@ -179,9 +179,144 @@ function makeDrinks(array){
   }
   return listDrinks
 }
+
+const active = makeActive(funSpots)
+ function displayActive(array) {
+   for (el of array) {
+     let name = $('<h3></h3>').text(el['name'])
+     let address = $('<p></p>').text(el['address'])
+     let cost = $('<p></p>').text(el['free'])
+     $('#ActiveText').append(name)
+     $('#ActiveText').append(address)
+     $('#ActiveText').append(cost)
+   }
+ }
+
+ const views = makeViews(funSpots)
+ function displayViews(array) {
+   for (el of array) {
+     let name = $('<h3></h3>').text(el['name'])
+     let address = $('<p></p>').text(el['address'])
+     let cost = $('<p></p>').text(el['free'])
+     $('#ViewsText').append(name)
+     $('#ViewsText').append(address)
+     $('#ViewsText').append(cost)
+   }
+  }
+
+ const shopping = makeShopping(funSpots)
+ function displayShopping(array) {
+   for (el of array) {
+     let name = $('<h3></h3>').text(el['name'])
+     let address = $('<p></p>').text(el['address'])
+     let type = $('<p></p>').text(el['type'])
+     $('#ShoppingText').append(name)
+     $('#ShoppingText').append(address)
+     $('#ShoppingText').append(type)
+   }
+  }
+
+ const entertainment = makeEntertainment(funSpots)
+ function displayEntertainment(array) {
+   for (el of array) {
+     let name = $('<h3></h3>').text(el['name'])
+     let address = $('<p></p>').text(el['address'])
+     $('#EntertainmentText').append(name)
+     $('#EntertainmentText').append(address)
+   }
+  }
+
+
+
+function makeBreakfast(array) {
+  let listBreakfast = [];
+  for(obj of array) {
+    if(obj['breakfast'] === 'yes'){
+      listBreakfast.push(obj)
+    }
+  }
+  return listBreakfast
+}
+
+function makeLunch(array){
+  let listLunch = [];
+  for(obj of array) {
+    if(obj['lunch'] === 'yes'){
+      listLunch.push(obj)
+    }
+  }
+  return listLunch
+}
+
+function makeDinner(array){
+  let listDinner = [];
+  for(obj of array) {
+    if(obj['dinner'] === 'yes'){
+      listDinner.push(obj)
+    }
+  }
+  return listDinner
+}
+
+function makeDrinks(array){
+  let listDrinks = [];
+  for(obj of array) {
+    if(obj['drinks'] === 'yes'){
+      listDrinks.push(obj)
+    }
+  }
+  return listDrinks
+}
+
+
+function makeActive(array) {
+  let listActive = [];
+  for(obj of array) {
+    if(obj['category'] === 'Active'){
+      listActive.push(obj)
+    }
+  }
+  return listActive
+}
+
+function makeViews(array){
+  let listViews = [];
+  for(obj of array) {
+    if(obj['category'] === 'Views'){
+      listViews.push(obj)
+    }
+  }
+  return listViews
+}
+
+function makeShopping(array){
+  let listShopping = [];
+  for(obj of array) {
+    if(obj['category'] === 'Shopping'){
+      listShopping.push(obj)
+    }
+  }
+  return listShopping
+}
+
+function makeEntertainment(array){
+  let listEntertainment = [];
+  for(obj of array) {
+    if(obj['category'] === 'Entertainment '){
+      listEntertainment.push(obj)
+    }
+  }
+  return listEntertainment
+}
+
+
 $(document).ready(() => {
   displayLunch(lunch)
   displayBfast(breakfast)
   displayDinner(dinner)
   displayDrinks(drinks)
+  displayActive(active)
+  displayViews(views)
+  displayShopping(shopping)
+  displayEntertainment(entertainment)
 })
