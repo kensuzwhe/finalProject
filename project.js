@@ -43,22 +43,102 @@ let foodSpots = [{"id":1,"name":"Snooze an A.M. Eatery","address":"3800 N Lamar 
 {"id":43,"name":"Jamba Juice","address":"10710 Research Blvd Ste. 306, Austin, TX 78759","website":"www.jambajuice.com/","price":"$","drinks":"yes","breakfast":"no","lunch":"no","dinner":"no"},
 {"id":44,"name":"Smoothie KIng","address":"4301 W William Cannon Dr #200, Austin, TX 78749","website":"https://www.smoothieking.com/","price":"$","drinks":"yes","breakfast":"no","lunch":"no","dinner":"no"}]
 
+
+let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","address":"2901 S Capital of Texas Hwy, Austin, TX 78746","type":"Mall","free":"null"},
+{"id":2,"name":"The Domain","category":"Shopping","address":"11410 Century Oaks Terrace, Austin, TX 78758","type":"Mall","free":"null"},
+{"id":3,"name":"Southpark Medows","category":"Shopping","address":"9500 S IH 35 Frontage Rd, Austin, TX 78748","type":"Shopping Center","free":"null"},
+{"id":4,"name":"The Shops at Arbor Walk","category":"Shopping","address":"10515 N Mopac Expy, Austin, TX 78759","type":"Shopping Center","free":"null"},
+{"id":5,"name":"Hill Country Galleria","category":"Shopping","address":"12700 Hill Country Blvd, Bee Cave, TX 78738","type":"Shopping Center","free":"null"},
+{"id":6,"name":"Village Shopping Center","category":"Shopping","address":"2700 W Anderson Ln #308, Austin, TX 78757","type":"Shopping Center","free":"null"},
+{"id":7,"name":"Creatures B.","category":"Shopping","address":"1206 S Congress Ave, Austin, TX 78704","type":"Boutique","free":"null"},
+{"id":8,"name":"Spring Frost B.","category":"Shopping","address":"5101 Burnet Rd, Austin, TX 78756","type":"Boutique","free":"null"},
+{"id":9,"name":"Panache B.","category":"Shopping","address":"7408 Sunset Heights Cir, Austin, TX 78735","type":"Boutique","free":"null"},
+{"id":10,"name":"Atown B.","category":"Shopping","address":"5502 Burnet Rd, Austin, TX 78756","type":"Boutique","free":"null"},
+{"id":11,"name":"Adelante B.","category":"Shopping","address":"1206 W 38th St # 4104, Austin, TX 78705","type":"Boutique","free":"null"},
+{"id":12,"name":"Sunroom B.","category":"Shopping","address":"1603 S Congress Ave, Austin, TX 78704","type":"Boutique","free":"null"},
+{"id":13,"name":"Blue Bridal B.","category":"Shopping","address":"4036 S Lamar Blvd suite 100, Austin, TX 78704","type":"Boutique","free":"null"},
+{"id":14,"name":"Golden Bones B.","category":"Shopping","address":"3210 Esperanza Crossing #110, Austin, TX 78758","type":"Boutique","free":"null"},
+{"id":15,"name":"The Boutique on Stonelake","category":"Shopping","address":"9910 Stonelake Boulevard, Located inside Lexus of Austin, Austin, TX 78759","type":"Boutique","free":"null"},
+{"id":16,"name":"Hamilton Pool","category":"Active","address":"Null","type":"null","free":"no"},
+{"id":17,"name":"Mayfield Park & Nature Preserve","category":"Active","address":"3505 W 35th St, Austin, TX 78703","type":"null","free":"yes"},
+{"id":18,"name":"Zilker Metropolitan Park","category":"Active","address":"2101 Barton Springs Rd, Austin, TX 78704","type":"null","free":"yes"},
+{"id":19,"name":"Lady Bird Lake","category":"Active","address":"Austin, TX","type":"null","free":"yes"},
+{"id":20,"name":"Barton Springs Municipal Pool","category":"Active","address":"2131 William Barton Dr, Austin, TX 78746","type":"null","free":"no"},
+{"id":21,"name":"Mckinney Falls State Park","category":"Active","address":"5808 McKinney Falls Pkwy, Austin, TX 78744","type":"null","free":"free"},
+{"id":22,"name":"Barton Creek Greenblet","category":"Active","address":"Null","type":"null","free":"yes"},
+{"id":23,"name":"Mount Bonell","category":"Active","address":"Austin, TX 78731","type":"null","free":"yes"},
+{"id":24,"name":"Zilker Botanical Garden","category":"Active","address":"2220 Barton Springs Rd, Austin, TX 78746","type":"null","free":"no"},
+{"id":25,"name":"Lake Travis","category":"Active","address":"Texas","type":"null","free":"yes"},
+{"id":26,"name":"Bullock Texas State History Museum","category":"Entertainment ","address":"1800 Congress Ave, Austin, TX 78701","type":"null","free":"null"},
+{"id":27,"name":"LBJ Presidental Library","category":"Entertainment ","address":"2313 Red River St, Austin, TX 78712","type":"null","free":"null"},
+{"id":28,"name":"Blanton Museum of Art","category":"Entertainment ","address":"200 E Martin Luther King Jr Blvd, Austin, TX 78712","type":"null","free":"null"},
+{"id":29,"name":"Austin Panic Room","category":"Entertainment ","address":"1205 Rio Grande St, Austin, TX 78701","type":"null","free":"null"},
+{"id":30,"name":"Jumpoline","category":"Entertainment ","address":"13801 N Mopac Expy #200, Austin, TX 78727","type":"null","free":"null"},
+{"id":31,"name":"MainEvent","category":"Entertainment ","address":"13301 North, US-183, Austin, TX 78750","type":"null","free":"null"},
+{"id":32,"name":"Pottery Studio & Gallery","category":"Entertainment ","address":"5442 Burnet Rd, Austin, TX 78756","type":"null","free":"null"},
+{"id":33,"name":"Pinballz","category":"Entertainment ","address":"8940 Research Blvd, Austin, TX 78758","type":"null","free":"null"},
+{"id":34,"name":"Metropolitan Theater","category":"Entertainment ","address":"901 Little Texas Ln, Austin, TX 78745","type":"null","free":"null"},
+{"id":35,"name":"Graffiti Park at Castle Hill","category":"Views","address":"1008 Baylor St, Austin, TX 78703","type":"null","free":"yes"},
+{"id":36,"name":"Austin Zoo","category":"Views","address":"10808 Rawhide Trail, Austin, TX 78736","type":"null","free":"no"},
+{"id":37,"name":"Pennybacker Bridge","category":"Views","address":"Austin, TX 78746","type":"null","free":"yes"},
+{"id":38,"name":"Austin Aquarium","category":"Views","address":"13530 US-183 #101, Austin, TX 78750","type":"null","free":"no"},
+{"id":39,"name":"Soco Bridge","category":"Views","address":"Congress Ave, Austin, TX 78704","type":"null","free":"free"},
+{"id":40,"name":"The Oasis","category":"Views","address":"6550 Comanche Trail, Austin, TX 78732","type":"null","free":"no"},
+{"id":41,"name":"Texas State Capitol","category":"Views","address":"1100 Congress Ave, Austin, TX 78701","type":"null","free":"yes"},
+{"id":42,"name":"Lake Austin","category":"Views","address":"Texas","type":"null","free":"yes"}]
 //create helper method to add dom elements
 //--loop through new makeBfast [etc] array
 //--create p (or whatever) elements w (EX obj['name'])
 //--then more for address, etc etc for all info
+
+const breakfast = makeBreakfast(foodSpots)
 function displayBfast(array) {
   for (el of array) {
     let name = $('<h3></h3>').text(el['name'])
     let address = $('<p></p>').text(el['address'])
     let website = $('<p></p>').text(el['website'])
-    $('#bfast').append(name)
-    $('#bfast').append(address)
-    $('#bfast').append(website)
+    $('#BreakfastText').append(name)
+    $('#BreakfastText').append(address)
+    $('#BreakfastText').append(website)
   }
 }
 
-const breakfast = makeBreakfast(foodSpots)
+const lunch = makeLunch(foodSpots)
+function displayLunch(array) {
+  for (el of array) {
+    let name = $('<h3></h3>').text(el['name'])
+    let address = $('<p></p>').text(el['address'])
+    let website = $('<p></p>').text(el['website'])
+    $('#LunchText').append(name)
+    $('#LunchText').append(address)
+    $('#LunchText').append(website)
+  }
+ }
+
+const dinner = makeDinner(foodSpots)
+function displayDinner(array) {
+  for (el of array) {
+    let name = $('<h3></h3>').text(el['name'])
+    let address = $('<p></p>').text(el['address'])
+    let website = $('<p></p>').text(el['website'])
+    $('#DinnerText').append(name)
+    $('#DinnerText').append(address)
+    $('#DinnerText').append(website)
+  }
+ }
+
+const drinks = makeDrinks(foodSpots)
+function displayDrinks(array) {
+  for (el of array) {
+    let name = $('<h3></h3>').text(el['name'])
+    let address = $('<p></p>').text(el['address'])
+    let website = $('<p></p>').text(el['website'])
+    $('#DrinksText').append(name)
+    $('#DrinksText').append(address)
+    $('#DrinksText').append(website)
+  }
+ }
+
 
 function makeBreakfast(array) {
   let listBreakfast = [];
@@ -100,5 +180,8 @@ function makeDrinks(array){
   return listDrinks
 }
 $(document).ready(() => {
+  displayLunch(lunch)
   displayBfast(breakfast)
+  displayDinner(dinner)
+  displayDrinks(drinks)
 })
