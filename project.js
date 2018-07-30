@@ -26,7 +26,7 @@ let foodSpots = [{"id":1,"name":"Snooze an A.M. Eatery","address":"3800 N Lamar 
 {"id":26,"name":"Odd Duck ","address":"1201 S Lamar Blvd, Austin, TX 78704","website":"https://oddduckaustin.com/","price":"$$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":27,"name":"Bouldin Oak Cafe","address":"1900 S 1st St, Austin, TX 78704","website":"Bouldincreekcafe.com","price":"$$$","drinks":"no","breakfast":"yes","lunch":"yes","dinner":"no"},
 {"id":28,"name":"Lenior","address":"1807 S 1st St, Austin, TX 78704","website":"lenoirrestaurant.com","price":"$$$","drinks":"no","breakfast":"no","lunch":"no","dinner":"yes"},
-{"id":29,"name":"Sway","address":"1417 S 1st St, Austin, TX 78704","website":"Swaythai.com","price":"$$$","drinks":"yes","breakfast":"yes","lunch":"yes","dinner":"yes"},
+{"id":29,"name":"Sway","address":"1417 S 1st St, Austin, TX 78704","website":"https://swaythai.com/","price":"$$$","drinks":"yes","breakfast":"yes","lunch":"yes","dinner":"yes"},
 {"id":30,"name":"Uchi","address":"801 S Lamar Blvd, Austin, TX 78704","website":"uchiaustin.com","price":"$$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":31,"name":"Homeslice","address":"1415 S Congress Ave, Austin, TX 78704","website":"Homeslicepizza.com","price":"$$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":32,"name":"Perry's SteakHouse and Grill","address":"114 W 7th St, Austin, TX 78701","website":"perryssteakhouse.com","price":"$$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
@@ -96,10 +96,13 @@ function displayBfast(array) {
   for (el of array) {
     let name = $('<h3></h3>').text(el['name'])
     let address = $('<p></p>').text(el['address'])
-    let website = $('<p></p>').text(el['website'])
     $('#BreakfastText').append(name)
     $('#BreakfastText').append(address)
-    $('#BreakfastText').append(website)
+
+    if(el['website'] !== 'null') {
+      let website = $('<a></a>').text(el['name'] + " website").attr('href', el['website'])
+      $('#BreakfastText').append(website)
+    }
   }
 }
 
@@ -111,7 +114,11 @@ function displayLunch(array) {
     let website = $('<p></p>').text(el['website'])
     $('#LunchText').append(name)
     $('#LunchText').append(address)
-    $('#LunchText').append(website)
+
+    if(el['website'] !== 'null') {
+      let website = $('<a></a>').text(el['name'] + " website").attr('href', el['website'])
+      $('#LunchText').append(website)
+    }
   }
  }
 
@@ -123,7 +130,11 @@ function displayDinner(array) {
     let website = $('<p></p>').text(el['website'])
     $('#DinnerText').append(name)
     $('#DinnerText').append(address)
-    $('#DinnerText').append(website)
+
+    if(el['website'] !== 'null') {
+      let website = $('<a></a>').text(el['name'] + " website").attr('href', el['website'])
+      $('#DinnerText').append(website)
+    }
   }
  }
 
@@ -135,7 +146,11 @@ function displayDrinks(array) {
     let website = $('<p></p>').text(el['website'])
     $('#DrinksText').append(name)
     $('#DrinksText').append(address)
-    $('#DrinksText').append(website)
+
+    if(el['website'] !== 'null') {
+      let website = $('<a></a>').text(el['name'] + " website").attr('href', el['website'])
+      $('#DrinksText').append(website)
+    }
   }
  }
 
@@ -309,23 +324,15 @@ function makeEntertainment(array){
   return listEntertainment
 }
 
-$(document).ready(() => {
-  displayLunch(lunch)
-  displayBfast(breakfast)
-  displayDinner(dinner)
-  displayDrinks(drinks)
-  displayActive(active)
-  displayViews(views)
-  displayShopping(shopping)
-  displayEntertainment(entertainment)
-
-$('.tab col s4').on('mouseenter', () => {
-
-  $('.sidenav').sidenav();
-})
-
-
-
-
-
-})
+$(document).ready(function(){
+   $('#slide-outFood').sidenav();
+   $('#slide-outFun').sidenav();
+   displayBfast(breakfast);
+   displayLunch(lunch);
+   displayDinner(dinner);
+   displayDrinks(drinks);
+   displayActive(active);
+   displayViews(views);
+   displayShopping(shopping);
+   displayEntertainment(entertainment);
+ });
