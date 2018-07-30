@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -13,11 +13,23 @@
     <h1>Exploring Austin</h1>
   <body>
     <h2>Views</h2>
-    <h3>Congress Bridge</h3>
-    <img src = "congressBridge.jpg" alt= "Congress Bridge"
-    <div id="Featured Views">
-    Ann W. Richards Congress Avenue Bridge is home to the world's largest urban bat colony, which is composed of Mexican free-tailed bats. They come out from under the bridge at dusk to feed themselves, attracting as many as 10,000 tourists annually.
+    <div class="card large">
+      <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="congressBridge.jpg" alt= "Congress Bridge">
+              <span class="card-title">Congress Bridge</span>
+            </div>
+            <div class="card-content">
+              <p>Ann W. Richards Congress Avenue Bridge is home to the world's largest urban bat colony, which is composed of Mexican free-tailed bats. They come out from under the bridge at dusk to feed themselves, attracting as many as 10,000 tourists annually.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
     <div id="ViewsText"></div>
     <script src="project.js" type="text/javascript">
     </script>
