@@ -310,6 +310,14 @@ function makeEntertainment(array){
 }
 
 $(document).ready(function(){
-   $('.sidenav').sidenav();
+   $('#slide-outFood').sidenav();
+   $('#slide-outFun').sidenav();
+   // displayBfast(breakfast);
+   // displayLunch(lunch);
+   // displayDinner(dinner);
+   // displayDrinks(drinks);
+   // displayActive(active);
+   // displayViews(views);
+   // displayShopping(shopping);
+   // displayEntertainment(entertainment);
  });
-     
