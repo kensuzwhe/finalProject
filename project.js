@@ -309,7 +309,6 @@ function makeEntertainment(array){
   return listEntertainment
 }
 
-
 $(document).ready(() => {
   displayLunch(lunch)
   displayBfast(breakfast)
@@ -319,4 +318,14 @@ $(document).ready(() => {
   displayViews(views)
   displayShopping(shopping)
   displayEntertainment(entertainment)
+
+$('.tab col s4').on('mouseenter', () => {
+
+  $('.sidenav').sidenav();
+})
+
+
+
+
+
 })
