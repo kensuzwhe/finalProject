@@ -26,7 +26,7 @@ let foodSpots = [{"id":1,"name":"Snooze an A.M. Eatery","address":"3800 N Lamar 
 {"id":26,"name":"Odd Duck ","address":"1201 S Lamar Blvd, Austin, TX 78704","website":"https://oddduckaustin.com/","price":"$$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":27,"name":"Bouldin Oak Cafe","address":"1900 S 1st St, Austin, TX 78704","website":"Bouldincreekcafe.com","price":"$$$","drinks":"no","breakfast":"yes","lunch":"yes","dinner":"no"},
 {"id":28,"name":"Lenior","address":"1807 S 1st St, Austin, TX 78704","website":"lenoirrestaurant.com","price":"$$$","drinks":"no","breakfast":"no","lunch":"no","dinner":"yes"},
-{"id":29,"name":"Sway","address":"1417 S 1st St, Austin, TX 78704","website":"Swaythai.com","price":"$$$","drinks":"yes","breakfast":"yes","lunch":"yes","dinner":"yes"},
+{"id":29,"name":"Sway","address":"1417 S 1st St, Austin, TX 78704","website":"https://swaythai.com/","price":"$$$","drinks":"yes","breakfast":"yes","lunch":"yes","dinner":"yes"},
 {"id":30,"name":"Uchi","address":"801 S Lamar Blvd, Austin, TX 78704","website":"uchiaustin.com","price":"$$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":31,"name":"Homeslice","address":"1415 S Congress Ave, Austin, TX 78704","website":"Homeslicepizza.com","price":"$$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":32,"name":"Perry's SteakHouse and Grill","address":"114 W 7th St, Austin, TX 78701","website":"perryssteakhouse.com","price":"$$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
@@ -94,50 +94,94 @@ let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","addre
 const breakfast = makeBreakfast(foodSpots)
 function displayBfast(array) {
   for (el of array) {
-    let name = $('<h3></h3>').text(el['name'])
-    let address = $('<p></p>').text(el['address'])
-    let website = $('<p></p>').text(el['website'])
-    $('#BreakfastText').append(name)
-    $('#BreakfastText').append(address)
-    $('#BreakfastText').append(website)
+    let tableRow = $('<tr></tr>').attr('id', el['id'])
+    $('.tableBfast').append(tableRow)
+
+    let name = $('<td></td>').text(el['name'])
+    let address = $('<td></td>').text(el['address'])
+    let website = $('<td></td>').text("")
+
+    $(tableRow).append(name)
+    $(tableRow).append(address)
+    $(tableRow).append(website)
+
+    if(el['website'] !== 'null') {
+      let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
+      $(website).append(link)
+    } else {
+      address.text("none")
+    }
   }
 }
 
 const lunch = makeLunch(foodSpots)
 function displayLunch(array) {
   for (el of array) {
-    let name = $('<h3></h3>').text(el['name'])
-    let address = $('<p></p>').text(el['address'])
-    let website = $('<p></p>').text(el['website'])
-    $('#LunchText').append(name)
-    $('#LunchText').append(address)
-    $('#LunchText').append(website)
+    let tableRow = $('<tr></tr>').attr('id', el['id'])
+    $('.tableLunch').append(tableRow)
+
+    let name = $('<td></td>').text(el['name'])
+    let address = $('<td></td>').text(el['address'])
+    let website = $('<td></td>').text("")
+
+    $(tableRow).append(name)
+    $(tableRow).append(address)
+    $(tableRow).append(website)
+
+    if(el['website'] !== 'null') {
+      let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
+      $(website).append(link)
+    } else {
+      address.text("none")
+    }
   }
- }
+}
 
 const dinner = makeDinner(foodSpots)
 function displayDinner(array) {
   for (el of array) {
-    let name = $('<h3></h3>').text(el['name'])
-    let address = $('<p></p>').text(el['address'])
-    let website = $('<p></p>').text(el['website'])
-    $('#DinnerText').append(name)
-    $('#DinnerText').append(address)
-    $('#DinnerText').append(website)
+    let tableRow = $('<tr></tr>').attr('id', el['id'])
+    $('.tableDinner').append(tableRow)
+
+    let name = $('<td></td>').text(el['name'])
+    let address = $('<td></td>').text(el['address'])
+    let website = $('<td></td>').text("")
+
+    $(tableRow).append(name)
+    $(tableRow).append(address)
+    $(tableRow).append(website)
+
+    if(el['website'] !== 'null') {
+      let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
+      $(website).append(link)
+    } else {
+      address.text("none")
+    }
   }
- }
+}
 
 const drinks = makeDrinks(foodSpots)
 function displayDrinks(array) {
   for (el of array) {
-    let name = $('<h3></h3>').text(el['name'])
-    let address = $('<p></p>').text(el['address'])
-    let website = $('<p></p>').text(el['website'])
-    $('#DrinksText').append(name)
-    $('#DrinksText').append(address)
-    $('#DrinksText').append(website)
+    let tableRow = $('<tr></tr>').attr('id', el['id'])
+    $('.tableDrinks').append(tableRow)
+
+    let name = $('<td></td>').text(el['name'])
+    let address = $('<td></td>').text(el['address'])
+    let website = $('<td></td>').text("")
+
+    $(tableRow).append(name)
+    $(tableRow).append(address)
+    $(tableRow).append(website)
+
+    if(el['website'] !== 'null') {
+      let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
+      $(website).append(link)
+    } else {
+      address.text("none")
+    }
   }
- }
+}
 
 
 function makeBreakfast(array) {
@@ -183,48 +227,68 @@ function makeDrinks(array){
 const active = makeActive(funSpots)
  function displayActive(array) {
    for (el of array) {
-     let name = $('<h3></h3>').text(el['name'])
-     let address = $('<p></p>').text(el['address'])
-     let cost = $('<p></p>').text(el['free'])
-     $('#ActiveText').append(name)
-     $('#ActiveText').append(address)
-     $('#ActiveText').append(cost)
+     let tableRow = $('<tr></tr>').attr('id', el['id'])
+     $('.tableActive').append(tableRow)
+
+     let name = $('<td></td>').text(el['name'])
+     let address = $('<td></td>').text(el['address'])
+     let cost = $('<td></td>').text(el['free'])
+
+     $(tableRow).append(name)
+     $(tableRow).append(address)
+     $(tableRow).append(cost)
+
    }
  }
 
  const views = makeViews(funSpots)
  function displayViews(array) {
    for (el of array) {
-     let name = $('<h3></h3>').text(el['name'])
-     let address = $('<p></p>').text(el['address'])
-     let cost = $('<p></p>').text(el['free'])
-     $('#ViewsText').append(name)
-     $('#ViewsText').append(address)
-     $('#ViewsText').append(cost)
+     let tableRow = $('<tr></tr>').attr('id', el['id'])
+     $('.tableViews').append(tableRow)
+
+     let name = $('<td></td>').text(el['name'])
+     let address = $('<td></td>').text(el['address'])
+     let cost = $('<td></td>').text(el['free'])
+
+     $(tableRow).append(name)
+     $(tableRow).append(address)
+     $(tableRow).append(cost)
+
    }
-  }
+ }
 
  const shopping = makeShopping(funSpots)
  function displayShopping(array) {
    for (el of array) {
-     let name = $('<h3></h3>').text(el['name'])
-     let address = $('<p></p>').text(el['address'])
-     let type = $('<p></p>').text(el['type'])
-     $('#ShoppingText').append(name)
-     $('#ShoppingText').append(address)
-     $('#ShoppingText').append(type)
+     let tableRow = $('<tr></tr>').attr('id', el['id'])
+     $('.tableShopping').append(tableRow)
+
+     let name = $('<td></td>').text(el['name'])
+     let address = $('<td></td>').text(el['address'])
+     let type = $('<td></td>').text(el['type'])
+
+     $(tableRow).append(name)
+     $(tableRow).append(address)
+     $(tableRow).append(type)
+
    }
-  }
+ }
 
  const entertainment = makeEntertainment(funSpots)
  function displayEntertainment(array) {
    for (el of array) {
-     let name = $('<h3></h3>').text(el['name'])
-     let address = $('<p></p>').text(el['address'])
-     $('#EntertainmentText').append(name)
-     $('#EntertainmentText').append(address)
+     let tableRow = $('<tr></tr>').attr('id', el['id'])
+     $('.tableEntertainment').append(tableRow)
+
+     let name = $('<td></td>').text(el['name'])
+     let address = $('<td></td>').text(el['address'])
+
+     $(tableRow).append(name)
+     $(tableRow).append(address)
+
    }
-  }
+ }
 
 
 
@@ -312,12 +376,12 @@ function makeEntertainment(array){
 $(document).ready(function(){
    $('#slide-outFood').sidenav();
    $('#slide-outFun').sidenav();
-   // displayBfast(breakfast);
-   // displayLunch(lunch);
-   // displayDinner(dinner);
-   // displayDrinks(drinks);
-   // displayActive(active);
-   // displayViews(views);
-   // displayShopping(shopping);
-   // displayEntertainment(entertainment);
+   displayBfast(breakfast);
+   displayLunch(lunch);
+   displayDinner(dinner);
+   displayDrinks(drinks);
+   displayActive(active);
+   displayViews(views);
+   displayShopping(shopping);
+   displayEntertainment(entertainment);
  });
