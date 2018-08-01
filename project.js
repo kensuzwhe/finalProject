@@ -68,7 +68,7 @@ let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","addre
 {"id":22,"name":"Barton Creek Greenblet","category":"Active","address":"3755 S Capital of Texas Hwy B, Austin, TX 78704","type":"null","free":"free"},
 {"id":23,"name":"Mount Bonell","category":"Active","address":"3800 Bonnell Dr, Austin, TX 78731-5846","type":"null","free":"free"},
 {"id":24,"name":"Zilker Botanical Garden","category":"Active","address":"2220 Barton Springs Rd, Austin, TX 78746","type":"null","free":"small cost"},
-{"id":25,"name":"Lake Travis","category":"Active","address":"lakeway, Texas","type":"null","free":"free"},
+{"id":25,"name":"Lake Travis","category":"Active","address":"Lakeway, Texas","type":"null","free":"free"},
 {"id":26,"name":"Bullock Texas State History Museum","category":"Entertainment ","address":"1800 Congress Ave, Austin, TX 78701","type":"null","free":"null"},
 {"id":27,"name":"LBJ Presidental Library","category":"Entertainment ","address":"2313 Red River St, Austin, TX 78712","type":"null","free":"null"},
 {"id":28,"name":"Blanton Museum of Art","category":"Entertainment ","address":"200 E Martin Luther King Jr Blvd, Austin, TX 78712","type":"null","free":"null"},
