@@ -1,3 +1,4 @@
+
 * {
   margin: 1 ;
   box-sizing: border-box;
@@ -57,11 +58,23 @@
 }
 
 .placeoftheWeek {
+  font-size: 35px;
   /* color: #263238; */
   /* text-shadow: 2px 2px #263238; */
 }
 
 .actualPlace {
   color: #e3f2fd;
+  font-size: 35px;
   /* text-shadow:1px 1px #263238; */
+}
+
+.waves-effect {
+  color: #2196f3;
+}
+
+
+.page {
+  margin-left: 50px;
+  margin-right: 50px;
 }
