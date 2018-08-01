@@ -376,6 +376,7 @@ function makeEntertainment(array){
 $(document).ready(function(){
    $('#slide-outFood').sidenav();
    $('#slide-outFun').sidenav();
+   $('.slider').slider();
    displayBfast(breakfast);
    displayLunch(lunch);
    displayDinner(dinner);
