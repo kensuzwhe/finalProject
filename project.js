@@ -18,7 +18,7 @@ let foodSpots = [{"id":1,"name":"Snooze an A.M. Eatery","address":"3800 N Lamar 
 {"id":18,"name":"Hyde Park Bar and Grill","address":"4521 Westgate Blvd, Austin, TX 78745","website":"http://hpbng.com/","price":"$$","drinks":"no","breakfast":"no","lunch":"no","dinner":"yes"},
 {"id":19,"name":"Irene's","address":"506 West Ave Austin, TX 78701","website":"http://irenesaustin.com/","price":"$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":20,"name":"Raku Asian Sushi Bistro","address":"2222 Rio Grande St, Austin, TX 78705","website":"rakusushibistro.com/","price":"$$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"no"},
-{"id":21,"name":"Pieous","address":"12005 US-290, Austin, TX 78737","website":"null","price":"$$","drinks":"yes","breakfast":"no","lunch":"yes","dinner":"yes"},
+{"id":21,"name":"Pieous","address":"12005 US-290, Austin, TX 78737","website":"null","price":"$$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":22,"name":"True Food Kitchen","address":"222 West Avenue HR100, Austin, TX 78701","website":"https://www.truefoodkitchen.com/","price":"$$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":23,"name":"Flower Child","address":"500 W. 2nd St., #133 Austin, TX 78701","website":"https://www.iamaflowerchild.com/","price":"$$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"yes"},
 {"id":24,"name":"P. Terry's ","address":"701 S Capital of Texas Hwy, West Lake Hills, TX 78746","website":"https://pterrys.com/","price":"$","drinks":"no","breakfast":"no","lunch":"yes","dinner":"no"},
@@ -59,16 +59,16 @@ let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","addre
 {"id":13,"name":"Blue Bridal B.","category":"Shopping","address":"4036 S Lamar Blvd suite 100, Austin, TX 78704","type":"Boutique","free":"null"},
 {"id":14,"name":"Golden Bones B.","category":"Shopping","address":"3210 Esperanza Crossing #110, Austin, TX 78758","type":"Boutique","free":"null"},
 {"id":15,"name":"The Boutique on Stonelake","category":"Shopping","address":"9910 Stonelake Boulevard, Located inside Lexus of Austin, Austin, TX 78759","type":"Boutique","free":"null"},
-{"id":16,"name":"Hamilton Pool","category":"Active","address":"Null","type":"null","free":"small cost"},
+{"id":16,"name":"Hamilton Pool","category":"Active","address":"24300 Hamilton Pool Rd, Dripping Springs, TX 78620","type":"null","free":"small cost"},
 {"id":17,"name":"Mayfield Park & Nature Preserve","category":"Active","address":"3505 W 35th St, Austin, TX 78703","type":"null","free":"free"},
 {"id":18,"name":"Zilker Metropolitan Park","category":"Active","address":"2101 Barton Springs Rd, Austin, TX 78704","type":"null","free":"free"},
 {"id":19,"name":"Lady Bird Lake","category":"Active","address":"Austin, TX","type":"null","free":"free"},
 {"id":20,"name":"Barton Springs Municipal Pool","category":"Active","address":"2131 William Barton Dr, Austin, TX 78746","type":"null","free":"small cost"},
 {"id":21,"name":"Mckinney Falls State Park","category":"Active","address":"5808 McKinney Falls Pkwy, Austin, TX 78744","type":"null","free":"free"},
-{"id":22,"name":"Barton Creek Greenblet","category":"Active","address":"Null","type":"null","free":"free"},
-{"id":23,"name":"Mount Bonell","category":"Active","address":"Austin, TX 78731","type":"null","free":"free"},
+{"id":22,"name":"Barton Creek Greenblet","category":"Active","address":"3755 S Capital of Texas Hwy B, Austin, TX 78704","type":"null","free":"free"},
+{"id":23,"name":"Mount Bonell","category":"Active","address":"3800 Bonnell Dr, Austin, TX 78731-5846","type":"null","free":"free"},
 {"id":24,"name":"Zilker Botanical Garden","category":"Active","address":"2220 Barton Springs Rd, Austin, TX 78746","type":"null","free":"small cost"},
-{"id":25,"name":"Lake Travis","category":"Active","address":"Texas","type":"null","free":"free"},
+{"id":25,"name":"Lake Travis","category":"Active","address":"lakeway, Texas","type":"null","free":"free"},
 {"id":26,"name":"Bullock Texas State History Museum","category":"Entertainment ","address":"1800 Congress Ave, Austin, TX 78701","type":"null","free":"null"},
 {"id":27,"name":"LBJ Presidental Library","category":"Entertainment ","address":"2313 Red River St, Austin, TX 78712","type":"null","free":"null"},
 {"id":28,"name":"Blanton Museum of Art","category":"Entertainment ","address":"200 E Martin Luther King Jr Blvd, Austin, TX 78712","type":"null","free":"null"},
@@ -80,12 +80,12 @@ let funSpots =[{"id":1,"name":"Barton Creek Square","category":"Shopping","addre
 {"id":34,"name":"Metropolitan Theater","category":"Entertainment ","address":"901 Little Texas Ln, Austin, TX 78745","type":"null","free":"null"},
 {"id":35,"name":"Graffiti Park at Castle Hill","category":"Views","address":"1008 Baylor St, Austin, TX 78703","type":"null","free":"free"},
 {"id":36,"name":"Austin Zoo","category":"Views","address":"10808 Rawhide Trail, Austin, TX 78736","type":"null","free":"small cost"},
-{"id":37,"name":"Pennybacker Bridge","category":"Views","address":"Austin, TX 78746","type":"null","free":"free"},
+{"id":37,"name":"Pennybacker Bridge","category":"Views","address":" 5300 N Capital of Texas Hwy, Austin, TX 78730","type":"null","free":"free"},
 {"id":38,"name":"Austin Aquarium","category":"Views","address":"13530 US-183 #101, Austin, TX 78750","type":"null","free":"small cost"},
 {"id":39,"name":"Soco Bridge","category":"Views","address":"Congress Ave, Austin, TX 78704","type":"null","free":"free"},
 {"id":40,"name":"The Oasis","category":"Views","address":"6550 Comanche Trail, Austin, TX 78732","type":"null","free":"small cost"},
 {"id":41,"name":"Texas State Capitol","category":"Views","address":"1100 Congress Ave, Austin, TX 78701","type":"null","free":"free"},
-{"id":42,"name":"Lake Austin","category":"Views","address":"Texas","type":"null","free":"free"}]
+{"id":42,"name":"Lake Austin","category":"Views","address":"3501 Lake Austin Blvd","type":"null","free":"free"}]
 //create helper method to add dom elements
 //--loop through new makeBfast [etc] array
 //--create p (or whatever) elements w (EX obj['name'])
@@ -109,7 +109,7 @@ function displayBfast(array) {
       let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
       $(website).append(link)
     } else {
-      address.text("none")
+      website.text("none")
     }
   }
 }
@@ -132,7 +132,7 @@ function displayLunch(array) {
       let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
       $(website).append(link)
     } else {
-      address.text("none")
+      website.text("none")
     }
   }
 }
@@ -155,7 +155,7 @@ function displayDinner(array) {
       let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
       $(website).append(link)
     } else {
-      address.text("none")
+      website.text("none")
     }
   }
 }
@@ -178,7 +178,7 @@ function displayDrinks(array) {
       let link = $('<a></a>').text(el['name'] + " Website").attr('href', el['website'])
       $(website).append(link)
     } else {
-      address.text("none")
+      website.text("none")
     }
   }
 }
@@ -384,4 +384,5 @@ $(document).ready(function(){
    displayViews(views);
    displayShopping(shopping);
    displayEntertainment(entertainment);
+   $('.slider').slider();
  });
