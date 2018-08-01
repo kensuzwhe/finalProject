@@ -33,8 +33,19 @@
   opacity: 0.5;
   margin-bottom: 10px;
 }
+.col.m12.btn.amber.lighten-1{
+  color: white;
+  text-shadow: .5px .5px white;
+  font-size: 2vw;
+  padding: .5vw;
+  height: 55px;
+  background:rgba(255,213,79,0.5);
+  font-style: normal;
+  box-shadow: 1px 2px lightgray;
+  font-family: 'Roboto', sans-serif;
+}
 
-.col.m12.btn.orange.accent-2{
+.col.m12.btn.orange.accent-2 {
   color: black;
   text-shadow: .5px .5px white;
   font-size: 3vw;
@@ -44,6 +55,31 @@
   box-shadow: 1px 2px lightgray;
   font-family: 'Roboto', sans-serif;
 }
-.slide h3{
-  text-shadow: 1.5px 1px #263238;
+
+.slides h3 {
+  /* border-radius: 40px; */
+  padding: 20px;
+  background-color: gray;
+  height: 40%;
+  width: 60%;
+  background:rgba(84,110,122,0.7);
+
+
+}
+
+.placeoftheWeek {
+  font-size: 35px;
+  /* color: #263238; */
+  /* text-shadow: 2px 2px #263238; */
+}
+
+.actualPlace {
+  color: #e3f2fd;
+  font-size: 35px
+  /* text-shadow:1px 1px #263238; */
+}
+
+.page {
+  margin-left: 50px;
+  margin-right: 50px;
 }
